@@ -36,7 +36,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Button defaultButton="true" layoutX="534.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="25.0" prefWidth="52.0" text="OK" />
-      <Button layoutX="470.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+      <HBox layoutX="419.0" layoutY="409.0" spacing="5.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <Button layoutX="398.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+            <Button defaultButton="true" layoutX="501.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="33.0" prefWidth="91.0" text="OK" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
