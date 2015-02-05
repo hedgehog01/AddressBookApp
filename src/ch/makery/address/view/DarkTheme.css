@@ -85,7 +85,7 @@
 }
 
 .menu .left-container {
-    -fx-background-color: black;
+	-fx-background-color: black;
 }
 
 .text-field {
@@ -115,8 +115,8 @@
 }
 
 .button:pressed, .button:default:hover:pressed {
-    -fx-background-color: white;
-    -fx-text-fill: #1d1d1d;
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
 }
 
 .button:focused {

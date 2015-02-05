@@ -1,38 +1,20 @@
-/*
- * Copyright (C) 2015 Hedgehog01
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package ch.makery.address.view;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import org.controlsfx.dialog.Dialogs;
 
 import ch.makery.address.model.Person;
 import ch.makery.address.util.DateUtil;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import org.controlsfx.dialog.Dialogs;
 
 /**
- * FXML Controller class
- *
- * @author Hedgehog01
+ * Dialog to edit details of a person.
+ * 
+ * @author Marco Jakob
  */
-public class PersonEditDialogController implements Initializable
-{
+public class PersonEditDialogController {
 
     @FXML
     private TextField firstNameField;
@@ -47,20 +29,20 @@ public class PersonEditDialogController implements Initializable
     @FXML
     private TextField birthdayField;
 
+
     private Stage dialogStage;
     private Person person;
     private boolean okClicked = false;
 
     /**
-     * Initializes the controller class.
+     * Initializes the controller class. This method is automatically called
+     * after the fxml file has been loaded.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-        // TODO
+    @FXML
+    private void initialize() {
     }
 
-        /**
+    /**
      * Sets the stage of this dialog.
      * 
      * @param dialogStage
@@ -68,8 +50,8 @@ public class PersonEditDialogController implements Initializable
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-    
-        /**
+
+    /**
      * Sets the person to be edited in the dialog.
      * 
      * @param person
@@ -85,8 +67,8 @@ public class PersonEditDialogController implements Initializable
         birthdayField.setText(DateUtil.format(person.getBirthday()));
         birthdayField.setPromptText("dd.mm.yyyy");
     }
-    
-      /**
+
+    /**
      * Returns true if the user clicked OK, false otherwise.
      * 
      * @return
@@ -166,11 +148,11 @@ public class PersonEditDialogController implements Initializable
             return true;
         } else {
             // Show the error message.
-            Dialogs.create()
-                .title("Invalid Fields")
-                .masthead("Please correct invalid fields")
-                .message(errorMessage)
-                .showError();
+        	Dialogs.create()
+		        .title("Invalid Fields")
+		        .masthead("Please correct invalid fields")
+		        .message(errorMessage)
+		        .showError();
             return false;
         }
     }
